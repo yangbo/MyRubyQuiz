@@ -54,8 +54,21 @@ class Salitaire
    # When the cards must represent a letter Clubs and Diamonds values are taken to be
    # the number of the letter (1 to 26), as are Hearts and Spades after subtracting 26
    # from their value (27 to 52 drops to 1 to 26).
+   DECK = (1..52).to_a+[:A, :B]
    def keystream msg
-      "DWJXHYRFDGTMSHPUURXJ"
+      keys = " " * msg.size
+      deck = DECK.clone
+      msg.size.each do
+         keys += generate_char! deck
+      end
+   end
+
+   # 1. Move the A joker down one card.
+   # 2. Move the B joker down two cards.
+   # 3. Perform a triple cut around the two jokers.
+   # 4. Perform a count cut using the value of the bottom card.
+   # 5. Find the output letter.
+   def generate_char! deck
    end
 
    # all characters of msg should be upper case or blank char.

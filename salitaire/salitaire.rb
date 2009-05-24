@@ -1,6 +1,6 @@
 #!/usr/local/bin/ruby
 # == Salitaire cryphor
-# Quiz url:
+# Quiz url: http://www.rubyquiz.com/quiz1.html
 class Salitaire
    def encrypt message
       preprocessed_msg = preprocess message
